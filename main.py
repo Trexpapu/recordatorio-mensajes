@@ -5,6 +5,7 @@ import ver_contactos
 import ver_mensajes
 import mensajes_de_hoy
 import limpiar_mensajes
+import envio_automatico
 def nuevo_contacto(ventana):
     ventana.destroy()
     agregar_contacto.main()
@@ -25,6 +26,8 @@ def ver_mensajes_hoy(ventana):
     main()
 def limpiar_datos(ventana):
     limpiar_mensajes.LimpiarDatos()
+def envio(ventana):
+    envio_automatico.enviar_automaticamente()
 
 def main():
     # Crear la ventana principal con título y color de fondo
@@ -92,6 +95,18 @@ def main():
         posx = mitad_pantalla,                    # Posición en X
         posy = pos_altura + 525 ,               #Posición en Y
         funcion = limpiar_datos ,
+        entrada = root                 
+    )
+
+    root.BotonAccion(
+        texto = "Envio automatico",      # Texto del Label
+        fuente = ft.FUENTE,               # Fuente
+        ancho = ft.ancho ,                    # Ancho del Label
+        altura = ft.altura,                    # Altura del Label
+        color = ft.azul,             # Color de fondo
+        posx = mitad_pantalla,                    # Posición en X
+        posy = pos_altura + 655 ,               #Posición en Y
+        funcion = envio ,
         entrada = root                 
     )
 
